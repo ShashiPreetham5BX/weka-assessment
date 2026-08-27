@@ -1,15 +1,16 @@
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = '/api';
 
 const select = document.getElementById('employeeSelect');
 const resultsArea = document.getElementById('resultsArea');
 const btn = document.getElementById('searchBtn');
 
+// Load employee list into dropdown
 async function loadEmployees() {
   try {
     const res = await fetch(`${API_BASE}/employees`);
 
     if (!res.ok) {
-      throw new Error('Server error');
+      throw new Error('Failed to load employees');
     }
 
     const data = await res.json();
@@ -20,10 +21,9 @@ async function loadEmployees() {
       opt.textContent = employee;
       select.appendChild(opt);
     });
-
   } catch (err) {
     resultsArea.innerHTML =
-      `<p class="error-state">Could not load employees. Is the server running?</p>`;
+      `<p class="error-state">Could not load employees. Please try again later.</p>`;
   }
 }
 
@@ -35,6 +35,7 @@ btn.addEventListener('click', async () => {
       `<p class="empty-state">Please select an employee first.</p>`;
     return;
   }
+
   btn.disabled = true;
   resultsArea.innerHTML =
     `<p class="loading-state">Searching network...</p>`;
@@ -52,13 +53,11 @@ btn.addEventListener('click', async () => {
 
     if (data.length === 0) {
       resultsArea.innerHTML =
-        `<p class="empty-state">
-          No extended connections with shared skills found for ${name}.
-        </p>`;
+        `<p class="empty-state">No extended connections with shared skills found for ${name}.</p>`;
       return;
     }
 
-    resultsArea.innerHTML = data.map((p) => `
+    resultsArea.innerHTML = data.map(p => `
       <div class="person-card">
         <strong>${p.person}</strong>
         <div class="skills">
@@ -69,13 +68,10 @@ btn.addEventListener('click', async () => {
 
   } catch (err) {
     resultsArea.innerHTML =
-      `<p class="error-state">
-        Something went wrong. Please try again later.
-      </p>`;
-
+      `<p class="error-state">Something went wrong. Please try again later.</p>`;
   } finally {
-    // Enable button again
     btn.disabled = false;
   }
 });
+
 loadEmployees();

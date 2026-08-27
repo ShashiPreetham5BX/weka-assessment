@@ -4,7 +4,6 @@ const select = document.getElementById('employeeSelect');
 const resultsArea = document.getElementById('resultsArea');
 const btn = document.getElementById('searchBtn');
 
-// Load employee list into dropdown
 async function loadEmployees() {
   try {
     const res = await fetch(`${API_BASE}/employees`);
@@ -15,13 +14,17 @@ async function loadEmployees() {
 
     const data = await res.json();
 
+    console.log('Employees loaded:', data);
+
     data.forEach(({ employee }) => {
       const opt = document.createElement('option');
       opt.value = employee;
       opt.textContent = employee;
       select.appendChild(opt);
     });
+
   } catch (err) {
+    console.error('Employee loading error:', err);
     resultsArea.innerHTML =
       `<p class="error-state">Could not load employees. Please try again later.</p>`;
   }
@@ -67,6 +70,7 @@ btn.addEventListener('click', async () => {
     `).join('');
 
   } catch (err) {
+    console.error('Network search error:', err);
     resultsArea.innerHTML =
       `<p class="error-state">Something went wrong. Please try again later.</p>`;
   } finally {

@@ -290,9 +290,9 @@ Create a `.env` file in the root directory of the project.
 Add the following:
 
 ```env
-COGNODB_URI=bolt+s://db-4320f686.bravo.databases.cognodb.com
-COGNODB_USER=cognodb
-COGNODB_PASSWORD=6419e8ee8fde37f878e73d7ef438a8ce
+COGNODB_URI=your_cognodb_uri
+COGNODB_USER=your_username
+COGNODB_PASSWORD=your_password
 ```
 
 Do not upload your actual credentials to GitHub.

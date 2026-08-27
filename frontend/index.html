@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skill Network Explorer | Employee Connections</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+    <text y=%22.9em%22 font-size=%2290%22>🔗</text>
+  </svg>">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Skill Network Explorer</h1>
+
+    <p class="subtitle">
+      Find colleagues-of-colleagues who share your skills
+    </p>
+
+    <div class="controls">
+
+      <select id="employeeSelect">
+        <option value="">Select an employee...</option>
+      </select>
+
+      <button id="searchBtn">
+        Find Network
+      </button>
+
+    </div>
+
+    <div id="resultsArea">
+      <p class="empty-state">
+        Select an employee above to explore their network.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

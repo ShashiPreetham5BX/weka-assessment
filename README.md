@@ -248,7 +248,7 @@ weka-assessment/
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/ShashiPreetham5BX/weka-assessment.git
 ```
 
 Move into the project folder:
@@ -290,9 +290,9 @@ Create a `.env` file in the root directory of the project.
 Add the following:
 
 ```env
-COGNODB_URI=your_cognodb_connection_uri
-COGNODB_USER=your_username
-COGNODB_PASSWORD=your_password
+COGNODB_URI=bolt+s://db-4320f686.bravo.databases.cognodb.com
+COGNODB_USER=cognodb
+COGNODB_PASSWORD=6419e8ee8fde37f878e73d7ef438a8ce
 ```
 
 Do not upload your actual credentials to GitHub.
@@ -433,13 +433,15 @@ The application also handles:
 
 ![Home Page](./screenshots/home.png)
 
+### Employees
+
+![Employees](./screenshots/employees.png)
+
 ### Network Results
 
 ![Network Results](./screenshots/results.png)
 
-### Employees
 
-![Employees](./screenshots/employees.png)
 
 ---
 
@@ -453,9 +455,8 @@ https://weka-assessment.onrender.com
 
 ## Screen Recording
 
-Add your screen recording link here:
+https://drive.google.com/file/d/171KEIYoqVzFFRhb_zalVx5wpnTvBmbKB/view?usp=sharing
 
-`YOUR_SCREEN_RECORDING_URL` 
 
 
 ## Future Improvements
